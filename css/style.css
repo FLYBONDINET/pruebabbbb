@@ -1,0 +1,28 @@
+
+:root{
+  --fb-yellow:#FFD400;
+  --fb-black:#111;
+  --card-bg: #fff;
+  --muted: #666;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:#f4f5f7; color:#111;}
+.header{background:var(--fb-black); color:var(--fb-yellow); padding:14px 18px}
+.header h1{margin:0;font-size:18px}
+.container{max-width:980px;margin:18px auto;padding:14px;display:grid;grid-template-columns:1fr;gap:12px}
+.card{background:var(--card-bg); padding:14px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.row label{display:flex;flex-direction:column;font-size:13px;color:var(--muted);min-width:160px}
+.row input, .row select{padding:8px;border-radius:6px;border:1px solid #ddd;font-size:14px}
+.controls{display:flex;gap:8px;align-items:center;margin-top:8px}
+button{background:var(--fb-black);color:var(--fb-yellow);border:none;padding:10px 12px;border-radius:8px;cursor:pointer}
+button[disabled]{opacity:0.45;cursor:not-allowed}
+.hidden{display:none}
+.flight-row{display:flex;gap:8px;align-items:center;padding:8px;border-radius:6px;border:1px solid #eee;margin-bottom:8px}
+.flight-meta{flex:1}
+.badge{background:#eee;padding:6px 8px;border-radius:6px;font-size:13px}
+.barcodes{overflow:auto;padding-top:6px;display:flex;gap:6px;flex-wrap:nowrap}
+.barcode-chip{padding:6px 8px;border-radius:6px;background:#fafafa;border:1px solid #ddd;white-space:nowrap;font-family:monospace}
+.scan-preview p{font-weight:600;font-size:16px;margin:6px 0}
+.footer{padding:12px;text-align:center;color:#666;font-size:13px}
+#summary{margin-top:12px;font-size:14px}

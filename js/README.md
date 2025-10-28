@@ -1,0 +1,1 @@
+This folder contains the client JS for the scanner app.

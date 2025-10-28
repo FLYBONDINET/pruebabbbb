@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flybondi - Escáner de Equipajes</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Flybondi - Escáner de Equipajes</h1>
+  </header>
+
+  <main class="container">
+    <section class="card" id="setup">
+      <h2>Nuevo vuelo / Configuración</h2>
+      <div class="row">
+        <label>Vuelo (Ej: FO501)<input id="flightNumber" autocomplete="off"></label>
+        <label>Código IATA (Ej: EZE)<input id="iataCode" autocomplete="off"></label>
+        <label>Fecha<input id="flightDate" type="date"></label>
+        <label>Nombre de maletero<input id="porterName" autocomplete="off"></label>
+        <div class="controls">
+          <button id="addFlightBtn">Agregar vuelo</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="activeFlights">
+      <h2>Vuelos activos</h2>
+      <div id="flightsList"></div>
+    </section>
+
+    <section class="card" id="scanner">
+      <h2>Escaneo</h2>
+      <p>Cuando uses el lector <strong>Honeywell Genesis 7580g</strong> (modo teclado), simplemente apunta y escanea: la app capturará el valor y te pedirá confirmación.</p>
+      <div class="row">
+        <label>Input de escaneo (enfoque automático)<input id="scanInput" placeholder="Escanea aquí o ingresa manualmente" autocomplete="off"></label>
+        <button id="verifyBtn" class="hidden">Verificar escaneo</button>
+      </div>
+
+      <div id="lastScan" class="scan-preview hidden">
+        <h3>Escaneo detectado</h3>
+        <p id="scannedValue"></p>
+        <label>Asignar a vuelo<select id="assignFlight"></select></label>
+        <div class="controls">
+          <button id="assignBtn">Aceptar y guardar</button>
+          <button id="discardBtn">Descartar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="closedFlights">
+      <h2>Acciones</h2>
+      <div class="row">
+        <button id="closeFlightBtn" disabled>Cerrar vuelo seleccionado</button>
+        <button id="exportCsvBtn">Exportar CSV</button>
+      </div>
+      <div id="summary"></div>
+    </section>
+  </main>
+
+  <footer class="footer">Generado por plantilla - personalizar para Flybondi</footer>
+
+  <script src="config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
