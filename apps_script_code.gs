@@ -1,15 +1,12 @@
-// Google Apps Script (Servidor) - pega esto en un nuevo proyecto de Apps Script
-// Crea o usa una hoja llamada 'Scans' (o la que indiques en config) y despliega el proyecto como Web App
+// Google Apps Script (Servidor) - v2
 function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
     var ss = SpreadsheetApp.getActiveSpreadsheet();
-    // If you prefer to open by ID, replace with SpreadsheetApp.openById('SPREADSHEET_ID');
     var sheetName = data.spreadsheetName || 'Scans';
     var sheet = ss.getSheetByName(sheetName);
     if(!sheet){
       sheet = ss.insertSheet(sheetName);
-      // Optional header
       sheet.appendRow(['Vuelo', 'IATA', 'Fecha', 'Maletero', 'FechaRegistro', 'Barcode 1', 'Barcode 2', '...']);
     }
     var row = data.row || [];
@@ -20,7 +17,6 @@ function doPost(e) {
   }
 }
 
-// Simple GET to test
 function doGet(e){
-  return ContentService.createTextOutput('Flybondi Scanner Apps Script endpoint').setMimeType(ContentService.MimeType.TEXT);
+  return ContentService.createTextOutput('Flybondi Scanner Apps Script endpoint v2').setMimeType(ContentService.MimeType.TEXT);
 }

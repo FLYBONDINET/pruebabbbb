@@ -32,10 +32,20 @@
 
     <section class="card" id="scanner">
       <h2>Escaneo</h2>
-      <p>Cuando uses el lector <strong>Honeywell Genesis 7580g</strong> (modo teclado), simplemente apunta y escanea: la app capturará el valor y te pedirá confirmación.</p>
+      <p>Usá el lector <strong>Honeywell Genesis 7580g</strong> (modo teclado). Opción rápida: auto-asignar al vuelo activo.</p>
       <div class="row">
-        <label>Input de escaneo (enfoque automático)<input id="scanInput" placeholder="Escanea aquí o ingresa manualmente" autocomplete="off"></label>
-        <button id="verifyBtn" class="hidden">Verificar escaneo</button>
+        <label>Input de escaneo (enfoque automático)<input id="scanInput" placeholder="Escaneá aquí o ingresá manual" autocomplete="off"></label>
+        <button id="verifyBtn">Verificar escaneo</button>
+      </div>
+      <div class="row">
+        <label class="inline">
+          <input type="checkbox" id="autoAssignActive" />
+          Auto-asignar al vuelo activo (sin confirmar)
+        </label>
+        <label class="inline">
+          <input type="checkbox" id="autoClearAfterAssign" checked />
+          Limpiar el campo luego de asignar
+        </label>
       </div>
 
       <div id="lastScan" class="scan-preview hidden">
@@ -59,7 +69,7 @@
     </section>
   </main>
 
-  <footer class="footer">Generado por plantilla - personalizar para Flybondi</footer>
+  <footer class="footer">v2 • con verificación manual y auto-asignación opcional</footer>
 
   <script src="config.js"></script>
   <script src="js/main.js"></script>
